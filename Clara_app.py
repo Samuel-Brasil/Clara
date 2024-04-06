@@ -3,19 +3,17 @@ import streamlit as st
 
 with st.sidebar:
     img1='http://vixcircle.org/wp-content/uploads/2024/03/Clara_2.jpg'
-    st.image(img1, caption= 'Clara', width=250)
-    st.title("CLARA")
-    st.subheader("Explica sua decisão com ***linguagem simples***")
+    st.image(img1, caption= 'Clara', width=200)
     st.divider()
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-st.title("💬 Chatbot")
-st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
+st.title("💬 Clara")
+st.caption("🚀 Explica sua decisão com ***linguagem simples***")
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Como eu posso te ajudar?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
