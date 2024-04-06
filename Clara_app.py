@@ -2,7 +2,11 @@ from openai import OpenAI
 import streamlit as st
 
 with st.sidebar:
-    st.header("Clara") 
+    img1='http://vixcircle.org/wp-content/uploads/2024/03/Clara_2.jpg'
+    st.image(img1, caption= 'Clara', width=250)
+    st.title("CLARA")
+    st.subheader("Explica sua decisão com ***linguagem simples***")
+    st.divider()
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
