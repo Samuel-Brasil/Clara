@@ -1,3 +1,17 @@
+from openai import OpenAI
+import streamlit as st
+
+with st.sidebar:
+    img1='http://vixcircle.org/wp-content/uploads/2024/03/Clara_2.jpg'
+    st.image(img1, caption= 'Clara', width=250)
+    st.divider()
+    openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+    "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+
+st.title("Clara 💬")
+st.caption("🚀 Explica sua decisão com ***linguagem simples***")
+
 # Step 1: PDF Upload
 uploaded_file = st.file_uploader("Escolha um arquivo em pdf", type="pdf")
 if uploaded_file is not None:
